@@ -1,9 +1,28 @@
-# Yaprak Analiz
+# Yaprak Analiz (Leaf Analysis)
 
 Mobil Cihazlarda Gerçek Zamanlı Yaprak Hastalığı Segmentasyonu — Bitirme Projesi
 Bandırma Onyedi Eylül Üniversitesi
 
 **Hazırlayanlar:** Hazan Ezgi Erçin (2311504299) & Fatih Taşkın (2111504031)
+
+## English Summary
+
+An Android application for real-time plant leaf disease detection and
+severity analysis, developed as a senior thesis project. Uses a U-Net
+segmentation model together with a NIR (near-infrared) model, trained on
+the PlantVillage dataset (apple, corn, grape leaves). The trained models
+are converted to TensorFlow Lite for on-device mobile inference.
+
+- `Android_Uygulama/` — Android app source code (Kotlin)
+- `Python_Model/` — model training code (U-Net + NIR), TFLite conversion scripts
+- `Raporlar/` — thesis and project reports, including an English report
+  (`HazanEzgi_Ercin_Fatih_Taskin_Project_Report_EN.docx`)
+
+The PlantVillage dataset itself is not included in this repo due to its size;
+it is publicly available at
+https://www.kaggle.com/datasets/arjuntejaswi/plant-village
+
+---
 
 ## Proje Özeti
 
