@@ -60,3 +60,9 @@ https://www.kaggle.com/datasets/arjuntejaswi/plant-village
 2. File → Open → `Android_Uygulama` klasörünü seç
 3. Gradle sync bekle
 4. Build → Build Bundle/APK → Build APK
+
+## Teşekkür
+
+Bu bitirme projesinin danışmanlığını üstlenen Dr. Öğr. Üyesi **Alpay Doruk**'a
+(Bandırma Onyedi Eylül Üniversitesi, Bilgisayar Mühendisliği Bölümü)
+değerli katkı ve rehberliği için teşekkür ederiz.
