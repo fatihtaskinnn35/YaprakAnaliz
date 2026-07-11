@@ -24,6 +24,25 @@ https://www.kaggle.com/datasets/arjuntejaswi/plant-village
 
 ---
 
+## Örnek Sonuç
+
+Model, RGB yaprak görüntüsü üzerinde hastalıklı bölgeleri segmente ediyor. Aşağıda üç kategoriden birer örnek: girdi görüntü, referans (pseudo-GT) maske ve model tahmini overlay olarak gösteriliyor.
+
+![Örnek segmentasyon sonucu](Python_Model/ornek_segmentasyon.png)
+
+## Değerlendirme Metrikleri (IoU / Dice)
+
+PlantVillage veri setinde piksel seviyesinde elle etiketlenmiş segmentasyon maskesi bulunmadığından, eğitimde de kullanılan HSV renk-tabanlı heuristik (`maske_olustur.py`) ile pseudo-ground-truth maskeler üretilip model tahminiyle karşılaştırıldı (`metrik_hesapla.py`, `test_verileri/` üzerinde, n=24):
+
+| Kategori | n | Mean IoU | Mean Dice |
+|---|---|---|---|
+| Corn | 8 | 0.602 | 0.739 |
+| Apple | 8 | 0.370 | 0.518 |
+| Grape | 8 | 0.305 | 0.444 |
+| **Genel** | 24 | **0.426** | **0.567** |
+
+**Gözlem:** Corn görüntülerinde arka plan zaten siyah/temiz olduğu için model belirgin şekilde daha iyi performans gösteriyor. Apple ve Grape görüntülerinde gri/dokulu arka plan ve gölgeler zaman zaman hastalıklı bölge olarak yanlış segmente ediliyor — bu, modelin bilinen bir sınırlaması ve ileride arka plan çıkarma (background removal) ön işleme adımıyla iyileştirilebilir.
+
 ## Proje Özeti
 
 U-Net segmentasyon modeli ve NIR (yakın kızılötesi) modeli kullanılarak yaprak
